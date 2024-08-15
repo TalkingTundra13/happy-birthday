@@ -49,27 +49,26 @@
       <img src="img/lydia2.png" alt="" class="lydia-dp" data-node-name="imagePath">
       <img src="img/hat.svg" alt="" class="hat">
       <div class="wish">
-        <div class="final-mensaje">
           <h3 class="wish-hbd" data-node-name="wishHeading">Happy Birthday!</h3>
         </div>  
         
         <audio id="zorionak" src="zorionak.mp3" loop></audio>
 
-    <script>
-      const zorionakAudio = document.getElementById('zorionak');
-      const finalMensaje = document.querySelector('.final-mensaje');
-  
-      const observer = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-          if (mutation.type === 'childList' && finalMensaje.textContent.includes('Happy Birthday!')) {
-            zorionakAudio.play();
-            observer.disconnect(); // Detenemos la observación una vez que se ha encontrado el texto
-          }
-        });
-      });
-  
-      observer.observe(finalMensaje, { childList: true, subtree: true });
-    </script>
+        <script>
+          const zorionakAudio = document.getElementById('zorionak');
+          const finalMensaje = document.querySelector('.wish');
+      
+          const observer = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+              if (mutation.type === 'childList' && wish.textContent.includes('Happy Birthday!')) {
+                zorionakAudio.play();
+                observer.disconnect(); // Detenemos la observación una vez que se ha encontrado el texto
+              }
+            });
+          });
+      
+          observer.observe(wish, { childList: true, subtree: true });
+        </script>
 </body>
         <h5 data-node-name="wishText">May the js.prototypes always be with you! ;)</h5>
       </div>
