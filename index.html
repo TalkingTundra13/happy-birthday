@@ -2,24 +2,6 @@
 <html lang="en">
 
 <head>
-   <h1 id="text-to-speak">Este es un título de ejemplo</h1>
-  <p id="text-to-speak">Este es un párrafo de ejemplo.</p>
-  <button onclick="speakText()">Leer texto</button>
-
-  <script>
-    function speakText() {
-      const textElements = document.querySelectorAll('[id="text-to-speak"]');
-      const textToSpeak = Array.prototype.map.call(textElements, function(element) {
-        return element.textContent;
-      }).join(' ');
-
-      const utterance = new SpeechSynthesisUtterance(textToSpeak);
-      utterance.voice = window.speechSynthesis.getVoices()[0];
-      utterance.lang = 'en-US';
-      window.speechSynthesis.speak(utterance);
-    }
-  </script>
-</body>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
